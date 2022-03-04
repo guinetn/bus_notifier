@@ -1,14 +1,14 @@
 # BUSES SPEECH NOTIFIER
 
-![](bus.png) SPEECH NOTIFICATION OF THE NEXT BUS SCHEDULED WITH POWERSHELL
+![](bus.png) SPEECH NOTIFICATION OF THE NEXT BUS SCHEDULED (powershell powered)
 
-## Intro 
+## INTRO 
 
 Every morning my wife ask to me for the next buses to start its optimized morning run....Huuum this is a repetive task that can be automated with some lines of Powershell. We live in Paris (France) area and the bus service api requested is [Transdev-idf](https://www.transdev-idf.com/info-trafic) but its easy to convert it to another city or project, for example to notify about anything...a new commit...
 
 ![](bus_notifier.png)
 
-## Application FLOWS
+## APPLICATION FLOWS
 
 ```mermaid
 flowchart LR;
@@ -20,7 +20,7 @@ flowchart LR;
     style B fill:#FFD700,stroke:#333,stroke-width:4px
 ```
 
-## Tech Stack
+## TECH STACK
 
 - Powershell Core 7.2.1 on Windows
     >https://github.com/PowerShell/PowerShell/releases
@@ -32,32 +32,29 @@ flowchart LR;
     
     >A jq playground to test jq syntax: [jqplay](https://jqplay.org/)
 
-## Usage
+## USAGE
 
 >PS>./r1_bus_notifier.ps1
 
-### API details
+### TECHNICAL DETAILS
 
-You can find more details about the api used [here](api_details.md)
+You can find more details about the api used [here](technical_details.md)
 
-### Contribute
+## CONTRIBUTING
 
-You want to contribute to this project?   
-Wow, thanks!   
+Wow, thanks to contribute to this project!   
 New ideas, samples, forks...are welcome.  
 So please just fork it, commit, push and send me a pull request to main.  
 
-### Donate
+## CHANGELOG
 
-You can also contribute to the continued success of the project via donation. Please click this link.
+See [CHANGELOG](CHANGELOG.md) for more details.
 
-### Notes
+## LICENSE
 
-Bus image comes from https://emojipedia.org/bus/
+This project is licensed under the [MIT License](LICENSE).
 
-As jq for Json, you can also try [htmlq](https://github.com/mgdm/htmlq), a jq but for HTML. Uses CSS selectors to extract bits of content from HTML files.
-
-## RoadMap
+## ROADMAP
 
 - ✔️ Make window nice
 - ❌ Improve the speech
@@ -65,6 +62,12 @@ As jq for Json, you can also try [htmlq](https://github.com/mgdm/htmlq), a jq bu
 - ❌ Detect shift in schedule from day to day and warn the user.
 - ❌ Add connections to others transportation services (RER A for Paris area) to say 'connection with train x at 00h00 possible'.
 
-### LICENSE
+### NOTES
 
-[MIT License](LICENSE)
+Bus image comes from https://emojipedia.org/bus/
+
+As jq for parsing Json, you can also try [htmlq](https://github.com/mgdm/htmlq), a jq but for HTML. Uses CSS selectors to extract bits of content from HTML files.
+
+### DONATE
+
+You can also contribute to the continued success of the project via donation. Please click this link.

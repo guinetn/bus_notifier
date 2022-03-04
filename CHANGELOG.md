@@ -22,13 +22,15 @@ Good to have: commit or PR links.
 
 -->
 
-## v0.1.0
+## v1.0.0
 
 ### Changed
 
 - Use pure XAML as window definition
 - Add images  
+- Review README
+- Add CHANGELOG
 
 ## v0.0.1 
 
-- POC, testing jq
+- POC, testing jq library

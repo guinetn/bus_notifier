@@ -1,3 +1,8 @@
+#
+# BUS NOTIFIER V1.0.0
+# https://github.com/guinetn/bus_notifier/edit/main/readme.md
+#
+
 # REQUIRED LIBRARIES
 Add-Type -AssemblyName PresentationFramework, PresentationCore, WindowsBase
 
@@ -5,22 +10,22 @@ Add-Type -AssemblyName PresentationFramework, PresentationCore, WindowsBase
 <Window 
 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     
-SizeToContent="WidthAndHeight"
-Background="#FFD700" 
-Title="BUS NOTIFIER 🚌">
-<Grid>
-    <Image Source="$PSScriptRoot\bus.png" Stretch="None" Margin="-5,30,0,-20" HorizontalAlignment="Left"/>
-    <StackPanel Margin="10">
-    <TextBlock FontSize="14" ToolTip="Click to open timetable source">
-            <Hyperlink Name="linkToTimeTable" 
-                    NavigateUri="https://www.transdev-idf.com/horaires-ligne-R1/lycee-de-vinci-vers-gare-de-st-germain-en-laye/012-RESALY-540445338-50012439">
-                    BUS R1 ▶▶ SAINT-GERMAIN RER</Hyperlink>
-        </TextBlock>
-        <Label FontWeight="Bold" Content="{Binding Path=Value, ElementName=sliderNotificationFrequency}" ContentStringFormat="Vocal Information Frequency: {0:###} seconds" />
-        <Slider Name="sliderNotificationFrequency" Value="60" Maximum="600" Minimum="30" TickFrequency="30" IsSnapToTickEnabled="True" TickPlacement="BottomRight"></Slider>
-        <Button Name="buttonCloseApp" Content="Close" Background="#000000" Foreground="#FFF" Margin="10" HorizontalAlignment="Right" Width="100px" Height="40px"></Button>
-    </StackPanel> 
-</Grid>
+SizeToContent="WidthAndHeight" Title="BUS NOTIFIER 🚌">
+    <Border Background="#FFD700" BorderBrush="Gray" BorderThickness="2">
+        <Grid>
+            <Image Source="$PSScriptRoot\bus.png" Stretch="None" Margin="-5,30,0,-20" HorizontalAlignment="Left"/>
+            <StackPanel Margin="10">
+            <TextBlock FontSize="14" ToolTip="Click to open timetable source">
+                    <Hyperlink Name="linkToTimeTable" 
+                            NavigateUri="https://www.transdev-idf.com/horaires-ligne-R1/lycee-de-vinci-vers-gare-de-st-germain-en-laye/012-RESALY-540445338-50012439">
+                            BUS R1 ▶▶ SAINT-GERMAIN RER</Hyperlink>
+                </TextBlock>
+                <Label FontWeight="Bold" Content="{Binding Path=Value, ElementName=sliderNotificationFrequency}" ContentStringFormat="Vocal Information Frequency: {0:###} seconds" />
+                <Slider Name="sliderNotificationFrequency" Value="60" Maximum="600" Minimum="30" TickFrequency="30" IsSnapToTickEnabled="True" TickPlacement="BottomRight"></Slider>
+                <Button Name="buttonCloseApp" Content="Close" Background="#000000" Foreground="#FFF" Margin="10" HorizontalAlignment="Right" Width="100px" Height="40px"></Button>
+            </StackPanel> 
+        </Grid>
+    </Border>
 </Window>
 "@
 
