@@ -22,6 +22,12 @@ Good to have: commit or PR links.
 
 -->
 
+## v1.0.1
+
+### Changed
+
+- Start vocal notification immediately at startup (before we have to wait for the interval)
+
 ## v1.0.0
 
 ### Changed

@@ -1,5 +1,5 @@
 #
-# BUS NOTIFIER V1.0.0
+# BUS NOTIFIER V1.0.1
 # https://github.com/guinetn/bus_notifier/edit/main/readme.md
 #
 
@@ -37,7 +37,8 @@ $MainFunction = {
     GenerateVariables
     RegisterEvents
     StartNotifications
-
+    NotifyUser # notify user immediately
+    
     $window.ShowDialog() | Out-Null
     UnRegisterEvents
  }

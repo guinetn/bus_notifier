@@ -1,12 +1,12 @@
 # REQUIRED LIBRARIES
 Add-Type -AssemblyName System.speech;       # SPEECH SYNTHETIS
-. ./apiservice.ps1
+. ./apiservice.ps1      # if executed from task-scheduler... define full path here for the .ps1 file OR specifying the running directory for scheduled task (-WorkingDirectory argument)
 
 function getSchedules() {
 
     # GET DATA AS JSON
     $apiService = [ApiService]::new($apiParams)
-    $apiJsonResponse = $apiService.Invoke() |  Select-Object -Property * | ConvertTo-Json 
+    $apiJsonResponse = ConvertTo-Json $apiService.Invoke() 
     
     # FILTER DATA
     
@@ -37,6 +37,7 @@ function vocalNotification($schedules) {
             $speaker.Speak($sentence);
         }
     }
+    $speaker.Dispose()
 }
 
 # API CALL PARAMETERS

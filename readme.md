@@ -36,6 +36,36 @@ flowchart LR;
 
 >PS>./r1_bus_notifier.ps1
 
+>CMD>pwsh ./r1_bus_notifier.ps1
+
+* With Task-Scheduler
+
+```powershell
+# Register the new PowerShell scheduled task
+
+# The name of your scheduled task.
+$taskName = "Bus_R1_Notifier"
+# Describe the scheduled task.
+$description = "Notify #R1 bus schedule"
+$taskTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday, Tuesday, Wednesday, Thursday, Friday -At "07:20AM"
+$taskAction = New-ScheduledTaskAction `
+    -Execute 'pwsh.exe' `
+    -Argument "-File K:\tools\bus_notifier\r1_bus_notifier.ps1" -WorkingDirectory "K:\tools\bus_notifier"
+
+# Register the scheduled task
+Register-ScheduledTask `
+    -TaskName $taskName `
+    -Action $taskAction `
+    -Trigger $taskTrigger `
+    -Description $description
+```
+
+To test the scheduled task, you can either wait for the next run schedule or use the command below to manually trigger.
+>Start-ScheduledTask -TaskName Bus_R1_Notifier
+
+>Unregister-ScheduledTask -TaskName 'Bus_R1_Notifier' -Confirm:$false
+```
+
 ### TECHNICAL DETAILS
 
 You can find more details about the api used [here](technical_details.md)
