@@ -38,9 +38,9 @@ flowchart LR;
 
 >CMD>pwsh ./r1_bus_notifier.ps1
 
-* With Task-Scheduler
+#### With Task-Scheduler
 
-```powershell
+```ps
 # Register the new PowerShell scheduled task
 
 # The name of your scheduled task.
@@ -64,7 +64,7 @@ To test the scheduled task, you can either wait for the next run schedule or use
 >Start-ScheduledTask -TaskName Bus_R1_Notifier
 
 >Unregister-ScheduledTask -TaskName 'Bus_R1_Notifier' -Confirm:$false
-```
+
 
 ### TECHNICAL DETAILS
 
